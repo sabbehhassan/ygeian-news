@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <section className=" py-20 px-6 text-center">
+    <section className=" py-20 px-6 text-center bg-gray-50">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold text-[#0a1f44] mb-4">
           Stay Ahead in Medicine with Personalized News
