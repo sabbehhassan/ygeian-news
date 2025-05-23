@@ -6,9 +6,11 @@ import { FaSearch } from "react-icons/fa";
 const Header = () => {
   return (
     <header className="w-full bg-[#FFFFFF] px-4 sm:px-8 py-3 shadow flex items-center justify-between">
-      {/* Logo */}
+      {/* Logo with route to home */}
       <div className="flex items-center gap-2">
-        <img src={logo} alt="YGEIAN Logo" className="w-36 sm:w-40" />
+        <Link to="/">
+          <img src={logo} alt="YGEIAN Logo" className="w-36 sm:w-40" />
+        </Link>
       </div>
 
       {/* Search Bar */}

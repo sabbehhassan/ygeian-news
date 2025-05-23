@@ -24,7 +24,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex w-full h-[calc(100vh-64px)] overflow-hidden bg-white">
+    <div className="flex w-full h-[668px] bg-white shadow-[0_5px_10px_rgba(0,0,0,0.1)]">
       {/* Left Side - Form */}
       <div className="w-full md:w-1/2 px-6 sm:px-10 py-10 flex flex-col justify-center items-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#0a1f44]">

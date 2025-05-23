@@ -1,29 +1,32 @@
-import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import MainLayout from '../../layout/main-layout';
-import SignIn from '../../pages/sign-in'
-import SignUp from '../../pages/sign-up'
-import Home from '../../pages/home';
-
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "../../layout/main-layout";
+import SignInWrapper from "../../pages/sign-in/SignInWrapper";  // ✅ NEW
+import SignUp from "../../pages/sign-up";
+import Home from "../../pages/home";
+import ForgetPassword from "../../pages/forget-password";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <MainLayout />,
     children: [
       {
-        index: true, 
+        index: true,
         element: <Home />,
       },
       {
-        path: 'login',
-        element: <SignIn />,
+        path: "login",
+        element: <SignInWrapper />, // ✅ Updated
       },
       {
-        path: 'register',
+        path: "register",
         element: <SignUp />,
       },
-      // You can add more pages like register, dashboard etc
+      {
+        path: "forgot-password",
+        element: <ForgetPassword />,
+      },
     ],
   },
 ]);
