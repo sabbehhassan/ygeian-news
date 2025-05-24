@@ -21,7 +21,7 @@ const signIn = () => {
 
   return (
     <div className="flex flex-col min-h-[93dvh] bg-white px-4 py-6">
-      <div className="w-full max-w-sm mx-auto flex flex-col flex-grow justify-center">
+      <div className="w-full max-w-sm mx-auto flex-col flex-grow justify-center">
         <h2 className="text-xl font-bold mb-4 text-[#0a1f44] text-center">
           Login to Ygeian FOCUS
         </h2>
@@ -73,7 +73,7 @@ const signIn = () => {
             {/* Forgot Password */}
             <div className="text-right text-sm mt-1">
               <Link
-                to="/forget-password"
+                to="/forgot-password"
                 className="text-blue-600 hover:underline"
               >
                 Forgot your password?

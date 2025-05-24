@@ -7,7 +7,7 @@ const MainLayout = () => {
   const location = useLocation();
 
   // Footer hide on login and register pages
-  const hideFooter = ['/login', '/register'].includes(location.pathname);
+  const hideFooter = ['/login', '/register', '/forgot-password'].includes(location.pathname);
 
   return (
     <div className="flex flex-col min-h-screen">

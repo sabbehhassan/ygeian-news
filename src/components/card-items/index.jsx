@@ -16,7 +16,7 @@ const CardItems = ({ data }) => {
 
           {/* Sort by shifted slightly left */}
           <div className="flex items-center border border-gray-300 px-4 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 cursor-pointer mr-6">
-            Sort by: Most Recent
+            Sort by:
             <ChevronDown className="w-4 h-4 ml-2" />
           </div>
         </div>

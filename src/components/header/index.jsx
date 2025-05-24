@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="w-full bg-[#FFFFFF] px-4 sm:px-8 py-3 shadow flex items-center justify-between">
+    <header className="w-full h-14 bg-[#FFFFFF] px-4 sm:px-8 py-3 shadow flex items-center justify-between">
       {/* Logo with route to home */}
       <div className="flex items-center gap-2">
         <Link to="/">

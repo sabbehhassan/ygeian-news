@@ -17,7 +17,7 @@ const SignInDesktop = () => {
   };
 
   return (
-    <div className=" md:flex w-full h-[668px] bg-white shadow-[0_5px_10px_rgba(0,0,0,0.1)]">
+    <div className="md:flex w-full h-[636px] bg-white shadow-[0_5px_10px_rgba(0,0,0,0.1)]">
       {/* Form Section */}
       <div className="w-1/2 px-10 py-10 flex flex-col justify-center">
         <div className="w-full max-w-md mx-auto">
@@ -57,6 +57,16 @@ const SignInDesktop = () => {
                   component="div"
                   className="text-red-500 text-xs mt-1"
                 />
+
+                {/* Forgot Password Link */}
+                <div className="text-right mt-2">
+                  <Link
+                    to="/forgot-password"
+                    className="text-blue-600 text-sm hover:underline"
+                  >
+                    Forgot your password?
+                  </Link>
+                </div>
               </div>
 
               <button
