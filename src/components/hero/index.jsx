@@ -22,7 +22,7 @@ const Hero = () => {
             Sign Up For Free
           </button>
           <button
-            onClick={() => navigate("/about")}
+            onClick={() => navigate("/learn-more")}
             className="w-full sm:w-auto px-6 py-3 border border-[#43B3E5] text-[#43B3E5] rounded-full hover:bg-[#e6efff] transition duration-300"
           >
             Learn More
