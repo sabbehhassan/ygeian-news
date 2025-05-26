@@ -1,5 +1,5 @@
 import React from "react";
-import LearnPAge from '../../components/learn-main'
+import LearnMain from '../../components/learn-main'
 import YExist from '../../components/whyExist'
 import Unique from '../../components/unique'
 import FocusWork from '../../components/focuswork'
@@ -8,7 +8,7 @@ import CTA from '../../components/CTAsection'
 const Learn = () => {
   return (
     <>
-    <LearnPAge />
+    <LearnMain />
     <YExist />
     <Unique />
     <FocusWork />

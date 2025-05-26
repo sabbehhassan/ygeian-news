@@ -10,12 +10,12 @@ const CTA = () => {
           Want personalized updates <br /> for your specialty?
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 mb-8">
-          Sign Up to customize your feed.
+          Stay ahead in your specialty with personalized news feeds, AI-powered summaries, and tools designed for busy medical professionals. Join Ygeian today and experience a smarter way to stay informed.
         </p>
         <div className="flex justify-center gap-6">
           <button
             onClick={() => navigate("/register")}
-            className=" block w-full px-6 py-3 bg-gradient-to-r from-[#094B80] to-[#132D5E] text-white rounded-full hover:bg-[#071733] transition duration-300"
+            className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-[#094B80] to-[#132D5E] text-white rounded-full hover:opacity-90 transition duration-300"
           >
             Sign Up For Free
           </button>

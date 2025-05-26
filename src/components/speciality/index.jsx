@@ -15,7 +15,7 @@ const Speciality = () => {
         <div className="flex justify-center gap-6">
           <button
             onClick={() => navigate("/register")}
-            className="px-6 py-3 bg-gradient-to-r from-[#094B80] to-[#132D5E] text-white rounded-full hover:bg-[#071733] transition duration-300"
+            className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-[#094B80] to-[#132D5E] text-white rounded-full hover:opacity-90 transition duration-300"
           >
             Sign Up For Free
           </button>

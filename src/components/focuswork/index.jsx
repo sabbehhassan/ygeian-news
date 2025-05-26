@@ -65,7 +65,7 @@ const FocusWork = () => {
           <div className="mt-8 text-center md:text-left">
             <Link
               to="/signup"
-              className="block w-full md:inline-block md:w-auto bg-gradient-to-r from-[#094B80] to-[#132D5E] text-white py-3 px-8 rounded-full text-sm md:text-base font-semibold hover:opacity-90"
+              className=" md:inline-block md:w-auto bg-gradient-to-r from-[#094B80] to-[#132D5E] text-white py-3 px-8 rounded-full text-sm md:text-base font-semibold hover:opacity-90"
             >
               Start Today
             </Link>
