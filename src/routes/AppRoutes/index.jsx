@@ -6,6 +6,7 @@ import SignUpWrapper from "../../pages/sign-up/SignUpWrapper";
 import Home from "../../pages/home";
 import ForgetPassword from "../../pages/forget-password";
 import LearnMore from "../../pages/learn"
+import Contact from "../../pages/contact"
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,12 @@ const router = createBrowserRouter([
         path: "learn-more",
         element: <LearnMore />,
       },
+      
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+
     ],
   },
 ]);
