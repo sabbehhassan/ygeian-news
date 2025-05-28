@@ -27,7 +27,7 @@ const CardItems = () => {
         {/* ... your existing UI ... */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-          {(articles || []).slice(0, 9).map((item, idx) => (
+          {(articles || []).slice(0, 18).map((item, idx) => (
             <div
               key={idx}
               onClick={() => handleCardClick(item)}
