@@ -2,21 +2,30 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchAllNews } from "./api";
 
 export const fetchNews = createAsyncThunk("news/fetchNews", async () => {
-  const data = await fetchAllNews();
-  return data;
+  const response = await fetchAllNews();
+  // Agar response.articles me array hai toh aise return karo:
+  return response.articles ? response.articles : response;
 });
+
 
 const newsSlice = createSlice({
   name: "news",
   initialState: {
-    items: [],       // use 'items' to match your Home.jsx
+    items: [],
     loading: false,
     error: null,
+    singleArticle: null, // add this here
+  },
+  reducers: {
+    setSingleArticle: (state, action) => {
+      state.singleArticle = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchNews.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(fetchNews.fulfilled, (state, action) => {
         state.loading = false;
@@ -29,4 +38,6 @@ const newsSlice = createSlice({
   },
 });
 
+
+export const { setSingleArticle } = newsSlice.actions;
 export default newsSlice.reducer;

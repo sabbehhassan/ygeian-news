@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";  // <--- dono import karo
 import { fetchNews } from "../../features/news/news.slice";
 
 import Hero from "../../components/hero";
@@ -13,8 +13,9 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchNews());
   }, [dispatch]);
-  // 👇 Add this line here
+
   console.log("Fetched News:", news);
+
   return (
     <>
       <Hero />
@@ -23,7 +24,7 @@ const Home = () => {
       ) : error ? (
         <div className="text-red-500 text-center py-10">{error}</div>
       ) : (
-        <CardItems data={news.slice(0, 12)} />
+        <CardItems />
       )}
       <Speciality />
     </>

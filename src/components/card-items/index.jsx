@@ -1,36 +1,39 @@
-// src/components/card-items/index.jsx
 import React from "react";
 import NewsCard from "../card/index.jsx";
 import { SlidersHorizontal, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setSingleArticle } from "../../features/news/news.slice.js";
 
-const CardItems = ({ data }) => {
+const CardItems = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const articles = useSelector((state) => state.news.items);
 
   const handleCardClick = (item) => {
-    navigate("/article", { state: item }); 
+    dispatch(setSingleArticle(item));
+    navigate("/article", { state: item });
   };
+
+  if (!articles || articles.length === 0) {
+    return <p className="text-center text-gray-500">No articles found.</p>;
+  }
 
   return (
     <div className="w-full px-6 py-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center mb-4">
-          <button className="flex items-center border border-gray-300 px-4 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 ml-6">
-            <SlidersHorizontal className="w-4 h-4 mr-2" />
-            Filters
-          </button>
-          <div className="flex items-center border border-gray-300 px-4 py-2 rounded-md text-sm text-gray-700 hover:bg-gray-100 cursor-pointer mr-6">
-            Sort by:
-            <ChevronDown className="w-4 h-4 ml-2" />
-          </div>
-        </div>
-
-        <div className="border-t border-gray-200 mb-6 mx-6" />
+        {/* Filters and Sort UI */}
+        {/* ... your existing UI ... */}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-          {data?.map((item, idx) => (
-            <div key={idx} onClick={() => handleCardClick(item)} className="cursor-pointer">
-              <NewsCard {...item} />
+          {(articles || []).slice(0, 9).map((item, idx) => (
+            <div
+              key={idx}
+              onClick={() => handleCardClick(item)}
+              className="cursor-pointer"
+            >
+              <NewsCard article={item} />
             </div>
           ))}
         </div>

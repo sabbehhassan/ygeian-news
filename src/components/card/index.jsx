@@ -1,3 +1,4 @@
+// src/components/news-card/NewsCard.jsx
 import React from "react";
 import {
   MessageCircle,
@@ -8,17 +9,19 @@ import {
 } from "lucide-react";
 import Mfavicon from "../../assets/Favicons/Micon.png";
 import { formatDistanceToNow } from "date-fns";
+import { useSelector } from "react-redux";
 
-const NewsCard = ({ image, title, publishedAt, comments, likes }) => {
-  // 🕒 Format time like "2 days ago"
-  const timeAgo = formatDistanceToNow(new Date(publishedAt), { addSuffix: true });
+const NewsCard = ({ article }) => {
+  if (!article) return null;
+
+  const timeAgo = formatDistanceToNow(new Date(article.publishedAt), { addSuffix: true });
 
   return (
     <div className="w-[346px] h-[475px] rounded-[16px] border border-gray-200 shadow-sm bg-white flex flex-col p-3">
       {/* Image Section */}
       <div className="rounded-[10px] overflow-hidden mb-3">
         <img
-          src={image}
+          src={article.image}
           alt="Card"
           className="w-full h-[200px] object-cover"
         />
@@ -32,20 +35,19 @@ const NewsCard = ({ image, title, publishedAt, comments, likes }) => {
         </div>
 
         <h2 className="text-base font-semibold text-gray-900 leading-snug mb-1">
-          {title}
+          {article.title}
         </h2>
 
-        {/* 🕒 Show relative time */}
         <span className="text-sm text-gray-400 mb-10">{timeAgo}</span>
 
         <div className="pt-2 flex justify-between items-center text-gray-500 text-sm">
           <div className="flex items-center gap-1">
             <MessageCircle className="w-6 h-6" />
-            <span>{comments?.length || 0}</span>
+            <span>{article.comments?.length || 0}</span>
           </div>
           <div className="flex items-center gap-1">
             <ThumbsUp className="w-6 h-6" />
-            <span>{likes}</span>
+            <span>{article.likes}</span>
           </div>
           <Bookmark className="w-6 h-6 cursor-pointer" />
           <Share2 className="w-6 h-6 cursor-pointer" />
