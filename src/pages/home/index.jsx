@@ -1,24 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNews } from "../../features/news/news.slice";
+
 import Hero from "../../components/hero";
 import CardItems from "../../components/card-items";
-import { Data } from "../../constents";
 import Speciality from "../../components/speciality";
-import CheckInbox from "../../pages/checkInbox";
-import ResetPass from "../../pages/resetPassword";
-import  ResetSuccess from "../../pages/resetSucces"
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { items: news, loading, error } = useSelector((state) => state.news);
+
+  useEffect(() => {
+    dispatch(fetchNews());
+  }, [dispatch]);
+  // 👇 Add this line here
+  console.log("Fetched News:", news);
   return (
     <>
       <Hero />
-      <CardItems data={Data} />
-      <Speciality/>
-      <CheckInbox />
-      <ResetPass />
-      <ResetSuccess />
-      {/* <h1>Popular cards</h1>
-      <CardItems data={Data} /> */}
-      {/* add more home content here */}
+      {loading ? (
+        <div className="text-center py-10">Loading...</div>
+      ) : error ? (
+        <div className="text-red-500 text-center py-10">{error}</div>
+      ) : (
+        <CardItems data={news.slice(0, 12)} />
+      )}
+      <Speciality />
     </>
   );
 };
