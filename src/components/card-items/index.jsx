@@ -1,6 +1,5 @@
 import React from "react";
 import NewsCard from "../card/index.jsx";
-import { SlidersHorizontal, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setSingleArticle } from "../../features/news/news.slice.js";

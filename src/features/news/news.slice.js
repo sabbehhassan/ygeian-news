@@ -3,7 +3,6 @@ import { fetchAllNews } from "./api";
 
 export const fetchNews = createAsyncThunk("news/fetchNews", async () => {
   const response = await fetchAllNews();
-  // Agar response.articles me array hai toh aise return karo:
   return response.articles ? response.articles : response;
 });
 
